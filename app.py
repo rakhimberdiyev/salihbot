@@ -25,4 +25,4 @@ async def on_startup(dispatcher):
 
 
 if __name__ == '__main__':
-    asyncio.run(on_startup())
+    asyncio.run(on_startup(dispatcher=dp))
