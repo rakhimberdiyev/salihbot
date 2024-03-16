@@ -5,6 +5,6 @@ env = Env()
 env.read_env()
 
 # .env fayl ichidan quyidagilarni o'qiymiz
-BOT_TOKEN = env.str("BOT_TOKEN")  # Bot toekn
-ADMINS = env.list("ADMINS")  # adminlar ro'yxati
-IP = env.str("ip")  # Xosting ip manzili
+BOT_TOKEN = "7152911619:AAFXeywJCs_xP1G081crl65q56Vtn5FowBk"  # Bot toekn
+ADMINS = [5085978007, 5128600218]  # adminlar ro'yxati
+IP = 'localhost'  # Xosting ip manzili
