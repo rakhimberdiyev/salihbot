@@ -8,6 +8,7 @@ from utils.set_bot_commands import set_default_commands
 
 
 async def on_startup(dispatcher):
+    proxy_url = 'http://47.236.85.113:443'
     try:
         db.create_table_users()
     except Exception as err:
