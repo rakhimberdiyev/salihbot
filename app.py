@@ -4,11 +4,11 @@ from loader import dp, db
 import middlewares, filters, handlers
 from utils.notify_admins import on_startup_notify
 from utils.set_bot_commands import set_default_commands
-
+from data.config import bot
 
 
 async def on_startup(dispatcher):
-    proxy_url = 'http://47.236.85.113:443'
+    
     try:
         db.create_table_users()
     except Exception as err:
@@ -21,7 +21,8 @@ async def on_startup(dispatcher):
     # Bot ishga tushgani haqida adminga xabar berish
     await on_startup_notify(dispatcher)
 
+    await dp.start_polling(bot)
+
 
 if __name__ == '__main__':
-    executor.start_polling(dp, skip_updates=True)
     asyncio.run(on_startup())
