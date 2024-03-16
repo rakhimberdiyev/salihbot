@@ -10,7 +10,7 @@ import asyncio
 
 async def get_bot_info(bot_token):
     async with aiohttp.ClientSession() as session:
-        url = f'https://api.telegram.org/bot{7152911619:AAFXeywJCs_xP1G081crl65q56Vtn5FowBk}/getMe'
+        url = f"https://api.telegram.org/bot{bot_token}/getMe"
         async with session.get(url) as response:
             if response.status == 200:
                 data = await response.json()
@@ -20,7 +20,7 @@ async def get_bot_info(bot_token):
                 return None
 
 async def on_startup(dispatcher):
-    bot_token = '7152911619:AAFXeywJCs_xP1G081crl65q56Vtn5FowBk'  # Bot tokeningizni bu yerga kiriting
+    bot_token = "7152911619:AAFXeywJCs_xP1G081crl65q56Vtn5FowBk"  # Bot tokeningizni bu yerga kiriting
     bot_info = await get_bot_info(bot_token)
     if bot_info:
         print(bot_info)
